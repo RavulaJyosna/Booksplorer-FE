@@ -17,6 +17,7 @@ class ViewBook extends React.Component {
           .then(response => {
             console.log(response)
             // create an array of contacts only with relevant data
+            localStorage.getItem('token', response.data.token)
       
             this.setState({books: response.data});
     

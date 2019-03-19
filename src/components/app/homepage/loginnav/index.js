@@ -48,20 +48,24 @@ Logout() {
 
 render() {
   return (
-    <MDBNavbar color="default-color" dark expand="md">
+    <MDBNavbar color="dark" dark expand="md">
       <MDBNavbarBrand>
        <h3> <strong className="white-text">Booksplorer</strong></h3>
       </MDBNavbarBrand>
       <MDBNavbarToggler onClick={this.toggleCollapse} />
       <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
       <MDBNavbarNav right>
-      
+      <MDBNavItem>
+           <h5> <MDBNavLink to="/">About us</MDBNavLink></h5>
+          </MDBNavItem>
+          <MDBNavItem>
+           <h5> <MDBNavLink to="/">view book</MDBNavLink></h5>
+          </MDBNavItem>
+          <MDBNavItem>
+           <h5> <MDBNavLink to="/">Reach out</MDBNavLink></h5>
+          </MDBNavItem>
           <MDBNavItem>
            <h5> <MDBNavLink to="/sellbook">Sell A Book</MDBNavLink></h5>
-          </MDBNavItem>
-        
-          <MDBNavItem>
-           
           </MDBNavItem>
           <MDBNavItem>
             <MDBDropdown>

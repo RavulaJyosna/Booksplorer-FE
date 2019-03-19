@@ -4,6 +4,7 @@ import NavBar from './index';
 import LoginNav from '../loginnav/index'
 import Footer from '.././../footer';
 var body;
+let fields1;
 class SellBook extends React.Component {
   constructor(props) {
     super(props);
@@ -13,7 +14,8 @@ class SellBook extends React.Component {
           author:'',
           price: '',
           count:'',
-          imageUrls:[]
+          imageUrls:[],
+          category:'',
       },
       fields:{},
       errors: {},
@@ -24,12 +26,20 @@ class SellBook extends React.Component {
     };
       this.handleChange = this.handleChange.bind(this);
       this.submitSellForm = this.submitSellForm.bind(this);
+      this._handleSubmit = this._handleSubmit.bind(this);
+      //this.handleSubmit = this.handleSubmit.bind(this);
+      this._handleImageChange = this._handleImageChange.bind(this);
+    //  this.handleCategory = this.handleCategory.bind(this);
     }
-
+  /*  handleCategory(e) {
+      this.setState({category: e.target.value})
+      console.log("catttttttssssss"+ this.)
+    }*/
     _handleSubmit(e) {
      // e.preventDefault();
+     console.log('.......'+this.state.form.imageUrls)
      body = {
-      imageUrl:this.state.form.imageUrl,
+      imageUrls:this.state.form.imageUrls,
      }
      console.log(body);
       console.log('handle uploading-', this.state.file);
@@ -112,6 +122,8 @@ class SellBook extends React.Component {
 
   }
   history = createHistory(this.props);
+
+
   submitSellForm(e) {
     let res;
     e.preventDefault();
@@ -121,23 +133,26 @@ class SellBook extends React.Component {
       fields["author"] = "";
       fields["price"] = ""; 
       fields["count"] = ""; 
-      //fields["imageUrls"]="";
+      fields["category"] = ""; 
+      fields["imageUrls"]=[];
       this.setState({fields:fields});
       let store = this.state;
       store.form.name = this.state.fields["title"];
       store.form.location = this.state.fields["author"];
-      
+      store.form.category = this.state.fields["category"];
+      console.log("HEyya" + store.form.category)
       store.form.price = this.state.fields["price"];
       store.form.rating = this.state.fields["count"];
-     
+     console.log('img........'+this.state.img);
       store.form.imageUrls=this.state.img;
+     
      // console.log(imageUrls);
       this.setState(store);
       console.log("Form name"+this.state.form.title);
       console.log("Form location"+this.state.form.author);
       console.log("Form price"+this.state.form.price);
       console.log("Form ranking"+this.state.form.count);
-     
+      console.log("Form category"+this.state.form.category);
       console.log("Form imgurl"+this.state.form.imageUrls);
     }
     let token = localStorage.getItem("AccessToken");
@@ -161,10 +176,12 @@ class SellBook extends React.Component {
       author : this.state.fields.author,
       price:this.state.fields.price,
       count:this.state.fields.count,
-     imageUrls:this.state.forms.imageUrls,
+     imageUrls:this.state.form.imageUrls,
+     category:this.state.fields.category,
     }
    
     console.log(body);
+    console.log(token);
     e.preventDefault();
     fetch(url, {
         headers: headers,
@@ -173,14 +190,14 @@ class SellBook extends React.Component {
         withCredentials:true,
                 credentials:'include',
                 headers:{
-                    'Authorization': 'Bearer ' + this.state.token,
+                    'Authorization': 'Bearer ' + token,
                   'Content-Type': 'application/json',
                   'Access-Control-Allow-Origin': url
                 },
-        
+       
     })
- 
-  .then(console.log(this.state.fields))
+    
+  //.then(console.log(this.state.fields))
  .catch(() => console.log("Can’t access " + url + " response. "))
 
           alert("Form submitted");
@@ -250,7 +267,25 @@ const { form} = this.state;
    <label for="inputIconEx4">Copies</label>
    <input type="text" id="inputIconEx4" class="form-control" name="count" placeholder="Enter number of copies"  value={this.state.fields.count} onChange={this.handleChange} />
    <div className="errorMsg">{this.state.errors.count}</div>
-   </div><br/><br/>
+   </div><br/>
+   <div class="md-form">
+   <div class="form-group col-md-6">
+		  <label>Category</label>
+		  <select id="inputState" class="form-control" value={this.state.category} onChange={this.handleChange} >
+		    <option> Choose...</option>
+		      <option value="History">History </option>{console.log(this.state.category)}
+		      <option value="Education">Education </option>
+          <option value="Art">Art </option>
+          <option value="Mystery">Mystery </option>
+          <option value="Fantacy">Fantacy </option>
+          <option value="Biography">Biography </option>
+          <option value="others">Others </option>
+         
+		  </select>
+		</div>
+    {console.log(this.state.category)}
+    
+   </div>
    <div class="md-form">
    <label for="inputIconEx5">Upload image</label>
    <input className="fileInput" type="file" name="imageUrls" onChange={(e)=>this._handleImageChange(e)} /><br></br>
@@ -260,7 +295,7 @@ const { form} = this.state;
                <button className="submitButton" type="submit" onClick={(e)=>this._handleSubmit(e)}>Upload Image</button><br></br>
 </div>
    
-   <button class="btn btn-info btn-block my-4" onClick={this.handleSubmit} type="submit">Submit</button>   
+   <button class="btn btn-info btn-block my-4"  type="submit">Submit</button>   
    </form>
    </div>
    </div>

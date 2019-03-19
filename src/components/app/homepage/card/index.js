@@ -17,7 +17,7 @@ const Cards = (props) => {
               <CardText>{book.price}</CardText>
               <CardText>{book.email}</CardText>
               <CardText>{book.username}</CardText>{console.log('printing username............'+book.username)}
-              <Button>Locate Book</Button>
+              <Button href="/locatebook">Locate Book</Button>
             </CardBody>
           </Card>
           )

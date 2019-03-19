@@ -10,8 +10,7 @@ import SellBook from './homepage/sellbook/index';
 import Profile from './profile/index';
 import AboutUs from './aboutus/index';
 import Reachout from "./homepage/reachout";
-
-
+import Locatebook from './locatebook/index';
 import {
     BrowserRouter as Router,
     Route,
@@ -45,6 +44,7 @@ class App extends React.Component{
                 <Route exact path="/sellbook" component={SellBook}/>
                 <Route exact path="/profile" component={Profile}/>
                 <Route exact path="/reachout" component={Reachout}/>
+                <Route exact path="/locatebook" component={Locatebook}/>
                 <Redirect to="/" component={Homepage}/>
                 </Switch>
              </Router>
