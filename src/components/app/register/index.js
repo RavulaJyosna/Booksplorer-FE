@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBrowserHistory as createHistory } from "history";
-import NavBar from '../homepage/navbar/index';
+import NavBar from '../navbar/index';
 var body;
 class Register extends React.Component {
     constructor() {

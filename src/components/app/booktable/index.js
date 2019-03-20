@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Tables from "../homepage/table/index";
+import Tables from "../table/index";
 import axios from "axios";
 //import "../homepage/Book.css";
 class Booktable extends React.Component{

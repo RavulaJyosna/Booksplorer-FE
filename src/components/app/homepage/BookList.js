@@ -6,7 +6,7 @@ import Book from "./Book";
 
 const BookList = (props) => {
   return (
-    <div>{props.books.map(b => <Book key={b.id} title={b.title} author={b.author} price={b.price} count={b.count} username={b.username}/>)}</div>
+    <div>{props.books.map(b => <Book key={b.id} title={b.title} author={b.author} price={b.price} count={b.count} category={b.category} imageUrls={b.imageUrls} username={b.user.username}/>)}</div>
   );
 }
 

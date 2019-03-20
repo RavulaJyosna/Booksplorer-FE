@@ -1,14 +1,5 @@
 import React from "react";
-import NavBar from '../homepage/navbar/index';
-import {
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBModalFooter,
-  MDBIcon,
-  MDBInput
-} from "mdbreact";
-import {Button} from "react-bootstrap";
+import NavBar from "../navBar";
 
 var body;
 
@@ -55,7 +46,7 @@ class Login extends React.Component {
 
       localStorage.setItem("AccessToken",contents.accessToken)
       
-      this.props.history.push('/loggedin')
+      this.props.history.push('/homelogin')
      // (this.props.history.push('/mh')):(this.props.history.push('/lh')))
       //((localStorage.getItem("AccessToken") == null )?(console.log(this.props.history),
     //this.props.history.push('/loggedin')):(this.props.history.push('/')))

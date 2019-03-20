@@ -1,6 +1,6 @@
 import React from 'react';
-import LoginNav from '../homepage/loginnav/index';
 import { createBrowserHistory as createHistory } from "history";
+import CondNav from '../condnav';
 var body;
 
 export default class Profile extends React.Component  {
@@ -60,7 +60,7 @@ console.log('view details'+this.state)
   render() {
     return (
         <div>
-            <LoginNav/><br/><br/>
+            <CondNav/><br/><br/>
         <div class="container mt-5">
         <div class="row">
         
@@ -85,11 +85,18 @@ console.log('view details'+this.state)
                                     <div class="d-inline-block font-weight-medium text-uppercase">Orders List</div>
                                 </div><span class="badge badge-secondary"></span>
                             </div>
-                        </a><a class="list-group-item active" href="#"><i class="fe-icon-user text-muted"></i>Profile Settings</a>
+                        </a><a class="list-group-item active" href="#"><i class="fe-icon-user text-muted"></i>VIEW PROFILE</a>
                         <a class="list-group-item" href="#">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div><i class="fe-icon-heart mr-1 text-muted"></i>
                                     <div class="d-inline-block font-weight-medium text-uppercase">My Wishlist</div>
+                                </div><span class="badge badge-secondary"></span>
+                            </div>
+                        </a>
+                        <a class="list-group-item" href="/updateprofile">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div><i class="fe-icon-heart mr-1 text-muted"></i>
+                                    <div class="d-inline-block font-weight-medium text-uppercase">Update Profile</div>
                                 </div><span class="badge badge-secondary"></span>
                             </div>
                         </a>
@@ -99,7 +106,7 @@ console.log('view details'+this.state)
             </div>
            
             <div class="col-lg-8 pb-5">
-
+<br/><br/><br/><br/>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="account-email">E-mail Address</label>
@@ -109,36 +116,17 @@ console.log('view details'+this.state)
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="account-phone">Phone Number</label>
-                            <input class="form-control" type="text" id="account-phone" name="phoneno" value={this.state.phoneno}  required=""/>
+                            <input class="form-control" type="text" id="account-phone" name="phoneno" value={this.state.phoneno}  disabled/>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="account-pass">New Password</label>
-                            <input class="form-control" type="password" id="account-pass" name="password" value={this.state.fields.password} />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="account-confirm-pass">Confirm Password</label>
-                            <input class="form-control" type="password" id="account-confirm-pass"/>
-                        </div>
-                    </div>
+
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="account-address">Address</label>
-                            <input class="form-control" type="text" id="account-addresss" name="address" value={this.state.address} />
+                            <input class="form-control" type="text" id="account-addresss" name="address" value={this.state.address} disabled/>
                         </div>
                     </div>
-                    <div class="col-12">
-                       
-                        <div class="d-flex flex-wrap justify-content-between align-items-center">
-                            
-                          
-                            <button class="btn btn-style-1 btn-primary" type="button" data-toast="" data-toast-position="topRight" data-toast-type="success" data-toast-icon="fe-icon-check-circle" data-toast-title="Success!" data-toast-message="Your profile updated successfuly.">Update Profile</button>
-                        </div>
-                        
-                   </div>
+                    
                    
             </div>
             </div>

@@ -1,11 +1,12 @@
 import React from "react";
-import Search from "../homepage/search"
+import Search from "../search"
 import { Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button } from 'reactstrap';
 import {CardColumns} from "reactstrap";
-import NavBar from '../homepage/navbar/index';
+
 import "./Book.css";
-import LoginNav from "../homepage/loginnav";
+import CondNav from "../condnav";
+
 let name;
 class SearchDetails extends React.Component {
 
@@ -53,7 +54,8 @@ class SearchDetails extends React.Component {
                 <br/>  <br/>  <br/>  <br/>  <br/>
                 {
                 
-                ((localStorage.getItem("AccessToken") == null )?(<NavBar/>):(<LoginNav/>))
+               // ((localStorage.getItem("AccessToken") == null )?(<NavBar/>):(<LoginNav/>))
+               <CondNav/>
               }
                 <br></br>
                 <div style={{position:'relative'}}>

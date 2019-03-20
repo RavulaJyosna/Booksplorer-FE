@@ -1,11 +1,11 @@
 import React from 'react';
-import NavBar from '../homepage/navbar/index';
+import CondNav from '../../app/condnav/index'
 class AboutUs extends React.Component {
 
     render(){
         return (
             <div>
-                <NavBar/><br/><br/><br/><br/>
+              <CondNav/> <br/><br/><br/><br/>
                 <br/>
                 <br/>
                 <br/>
@@ -14,6 +14,10 @@ class AboutUs extends React.Component {
 
         <br/>
         <div class="container">
+        <div class="card">
+        <div class="card-body px-lg-6 pt-0" >
+        <br/>
+        <br/>
         <p style={{fontSize : '20px'}}>
         Booksplorer is a one-stop destination for your search for finding the perfect bookstores around you. It helps you set various parameters and lets you find the book of your choice.
         <br/><br/>
@@ -24,6 +28,9 @@ class AboutUs extends React.Component {
         {/* <center><img src="https://cdn.pixabay.com/photo/2016/10/13/19/24/book-1738607_960_720.jpg" width="500" height="400"></img></center> */}
         </div>
         </div>
+        </div>
+        </div>
+ 
         );
     }
     }

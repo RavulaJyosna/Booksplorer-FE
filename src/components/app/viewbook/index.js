@@ -1,10 +1,10 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBIcon } from 'mdbreact';
-import Cards from "../homepage/card/index";
-import NavBar from '../homepage/navbar/index';
+import Cards from "../card/index";
 import axios from "axios";
 import "../homepage/Book.css";
+import CondNav from "../condnav";
 
 class ViewBook extends React.Component {
     state = {
@@ -36,7 +36,7 @@ class ViewBook extends React.Component {
       console.log(this.state.books)
       return(
           <div>
-        <NavBar/><br/><br/><br/><br/>
+        <CondNav/><br/><br/><br/><br/>
         
         <Cards books={this.state.books} />
         
