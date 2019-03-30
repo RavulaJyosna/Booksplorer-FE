@@ -2,7 +2,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cards from "../card/index";
 import axios from "axios";
-import "../homepage/Book.css";
+import "../card/Book.css";
 class BookCards extends React.Component{
     state = {
         books: []

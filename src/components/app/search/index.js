@@ -15,18 +15,21 @@ class Search extends React.Component{
         }
       }
       onButtonClick() {     
-          let name=this.state.search
-          console.log(name);
-          <SearchDetails name={this.state.name}/>
-         let path=`Search`;
-         this.props.history.push({
-            pathname: path,
-            state: {
-             name:name
-            }
-           });
-             
-      }
+        let name=this.state.search
+        console.log(name);
+      //   console.log(this.props.location.pathname)
+      //   if(this.props.location.pathname == "/Search")
+      //  // <SearchDetails name={this.state.name}/>
+      //      window.location.reload()
+       let path=`search`;
+       this.props.history.push({
+          pathname: path,
+          state: {
+           name:name
+          }
+         });
+           
+    }
 
       handleChange(e) {
         this.setState({search: e.target.value});

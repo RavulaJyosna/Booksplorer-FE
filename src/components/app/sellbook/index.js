@@ -15,6 +15,7 @@ class SellBook extends React.Component {
           count:'',
           imageUrls:[],
           category:'',
+          description:'',
       },
       fields:{},
       errors: {},
@@ -135,6 +136,7 @@ class SellBook extends React.Component {
       fields["count"] = ""; 
       fields["category"] = ""; 
       fields["imageUrls"]=[];
+      fields["description"]="";
       this.setState({fields:fields});
       let store = this.state;
       store.form.name = this.state.fields["title"];
@@ -145,7 +147,8 @@ class SellBook extends React.Component {
       store.form.rating = this.state.fields["count"];
      console.log('img........'+this.state.img);
       store.form.imageUrls=this.state.img;
-     
+     store.form.description = this.state.fields["description"];
+
      // console.log(imageUrls);
       this.setState(store);
       console.log("Form name"+this.state.form.title);
@@ -154,6 +157,7 @@ class SellBook extends React.Component {
       console.log("Form ranking"+this.state.form.count);
       console.log("Form category"+this.state.form.category);
       console.log("Form imgurl"+this.state.form.imageUrls);
+      console.log("Form description"+this.state.description);
     }
     let token = localStorage.getItem("AccessToken");
     const url = "http://10.10.200.19:9000/books";
@@ -178,6 +182,7 @@ class SellBook extends React.Component {
       count:this.state.fields.count,
      imageUrls:this.state.form.imageUrls,
      category:this.state.fields.category,
+     description:this.state.fields.description,
     }
    
     console.log(body);
@@ -267,6 +272,11 @@ const { form} = this.state;
    <label for="inputIconEx4">Copies</label>
    <input type="text" id="inputIconEx4" className="form-control" name="count" placeholder="Enter number of copies"  value={this.state.fields.count} onChange={this.handleChange} />
    <div className="errorMsg">{this.state.errors.count}</div>
+   </div>
+   <div class="md-form">
+   <label for="inputIconEx5">Description</label>
+   <input type="textArea" id="inputIconEx5" className="form-control" name="description" placeholder="Enter description"  value={this.state.fields.description} onChange={this.handleChange} />
+   <div className="errorMsg">{this.state.errors.count}</div>
    </div><br/>
    <div class="md-form">
    <div class="form-group col-md-6">
@@ -287,7 +297,7 @@ const { form} = this.state;
     
    </div>
    <div class="md-form">
-   <label for="inputIconEx5">Upload image</label>
+   <label for="inputIconEx6">Upload image</label>
    <input className="fileInput" type="file" name="imageUrls" onChange={(e)=>this._handleImageChange(e)} /><br></br>
                 <div className="imgPreview" ><br></br>
                   {$imagePreview  }

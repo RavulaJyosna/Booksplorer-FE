@@ -36,7 +36,7 @@ export default class NavBar extends React.Component  {
       <div class="row">
           <Navbar color="dark" fixed="top" dark expand="md" scrolling dark>
           <div class="col">
-          <NavbarBrand href="/" style={{fontSize : "45px", fontstyle : "italic"}}>Booksplorer</NavbarBrand>
+          <NavbarBrand href="/" style={{ fontstyle : "italic"}}>Booksplorer</NavbarBrand>
           </div>
           
           <NavbarToggler onClick={this.toggle} />
@@ -44,11 +44,11 @@ export default class NavBar extends React.Component  {
           <Nav className="ml-auto">
           
           <NavItem>
-          <NavbarBrand href="/aboutus" style={{fontSize : "25px"}}>About Us</NavbarBrand>
-          <NavbarBrand href="/viewbook" style={{fontSize : "25px"}}>ViewBook</NavbarBrand>
+          <NavbarBrand href="/aboutus" >About Us</NavbarBrand>
+          <NavbarBrand href="/viewbook" >ViewBook</NavbarBrand>
           
-          <NavbarBrand href="/reachout" style={{fontSize : "25px"}}>Reach Out!</NavbarBrand>
-          <NavbarBrand href="/login" style={{fontSize : "25px"}}>Login</NavbarBrand>
+          <NavbarBrand href="/reachout" >Reach Out!</NavbarBrand>
+          <NavbarBrand href="/login" >Login</NavbarBrand>
           
           </NavItem>
           

@@ -62,7 +62,7 @@ class Register extends React.Component {
     })
   .then(console.log(this.state.fields))
   .catch(() => console.log("Can’t access " + url + " response. "))
-  //this.props.history.push(`/Login`)
+  this.props.history.push(`/Login`)
   this.setState({fields:fields});
           alert("Form submitted");
       }

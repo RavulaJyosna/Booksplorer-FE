@@ -5,12 +5,12 @@ import Login from './login/index';
 import Register from './register/index';
 import SearchDetails from './searchDetails/index'
 import ViewBook from './viewbook/index';
-import LoginNav from './loginnav/index'
+//import LoginNav from './loginnav/index'
 import SellBook from './sellbook/index';
 import Profile from './profile/index';
 import AboutUs from './aboutus/index';
 import Reachout from "./homepage/reachout";
-import Locatebook from './locatebook/index';
+//import Locatebook from './locatebook/index';
 import UpdateProfile from './updateProfile/index'
 import {
     BrowserRouter as Router,
@@ -19,6 +19,8 @@ import {
     Redirect,
 } from 'react-router-dom'
 import HomeLogin from "./homelogin";
+import Viewmore from "./viewmore";
+//import SideNav from "./sidenav";
 
 
 
@@ -47,7 +49,7 @@ class App extends React.Component{
                 <Route exact path="/profile" component={Profile}/>
                 <Route exact path="/updateprofile" component={UpdateProfile}/>
                 <Route exact path="/reachout" component={Reachout}/>
-                <Route exact path="/locatebook" component={Locatebook}/>
+                <Route exact path="/viewmore" component={Viewmore}/>
                 <Redirect to="/" component={Homepage}/>
                 </Switch>
              </Router>
